@@ -35,19 +35,20 @@ def parsing_of_massives(dict_buf,list_buf):
         masXspam.append(xspam_dict[element]/dict_buf[element])
     return masKey,masValue,masXspam
 def drawing_of_graphics(masKey,masValue,masXspam):
-    fig = plt.figure(figsize=(10,5))
 
     plt.title('Количество писем')
     i = np.arange(len(masValue))
     plt.bar(i,masValue,width=0.5)
     plt.xticks(i,masKey,fontsize='6', rotation='vertical')
-    plt.savefig("1.png")
     plt.subplots_adjust(bottom=0.4)
+    plt.savefig("1.png")
     plt.show()
+    
     i = np.arange(len(masXspam))
     plt.title('Средний показатель спама по каждому отправителю')
     plt.bar(i,masXspam,width=0.5)
     plt.xticks(i,masKey,fontsize='6', rotation='vertical')
+    plt.subplots_adjust(bottom=0.4)
     plt.savefig("2.png")
     plt.show()
 def main():
